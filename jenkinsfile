@@ -1,0 +1,37 @@
+pipeline {
+    agent {
+        node {
+            label 'ubuntu-jenkins-ec2'
+        }
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building..."
+                sh '''
+                echo "Doing build stuff"
+                '''
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "Testing..."
+                sh '''
+                echo "Doing test stuff"
+                '''
+            }
+        }
+        
+        stage('Delivery') {
+            steps {
+                echo "Delivering..."
+                sh '''
+                echo "Doing delivery stuff"
+                '''
+            }
+        }
+        
+    }
+}
