@@ -4,6 +4,10 @@ pipeline {
             label 'ubuntu-jenkins-ec2'
         }
     }
+
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
     
     stages {
         stage('Build') {
